@@ -1,8 +1,9 @@
 version: "3"
 services:
   redis-server:
-    image: "redis"
+    image: "redis" # Starts the redis container (From dockerhub)
   node-app:
-    build: .
+    build: . # Finds the Dockerfile in pwd and use that to build the node-app container
+    restart: "always"
     ports:
       - "3000:8081"
